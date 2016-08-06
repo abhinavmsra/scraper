@@ -1,24 +1,23 @@
-# README
+# Scraper API 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is an API driven application which accepts the url of a page, scrapes it and indexes its contents to be viewed by users.
 
-Things you may want to cover:
+# API Endpoints
 
-* Ruby version
+1) [GET] https://enigmatic-sands-52774.herokuapp.com/api/v1/pages
+   
+   Description: It lists the available scraped pages details.
+   
+2) [POST] https://enigmatic-sands-52774.herokuapp.com/api/v1/pages
+    
+    Parameters: 
+      - url : URL to be scraped. Present in request body.
+      
+    Description: It scrapes a new page
+    
+3) [GET]  https://enigmatic-sands-52774.herokuapp.com/api/v1/pages/:id
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    Parameters: 
+          - id : ID of page seeked. Present in URL path.
+          
+    Description: It returns the details of the page
