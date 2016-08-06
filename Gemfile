@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
-gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
@@ -26,6 +25,8 @@ gem 'active_model_serializers'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
+
+  gem 'mysql2'
 end
 
 group :development do
@@ -47,5 +48,9 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+ruby '2.3.0'
