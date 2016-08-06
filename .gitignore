@@ -3,3 +3,4 @@ log
 tmp
 coverage
 *.yml
+!config/secrets.yml
