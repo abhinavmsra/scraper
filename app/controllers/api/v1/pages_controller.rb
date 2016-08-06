@@ -8,11 +8,18 @@ class Api::V1::PagesController < ApplicationController
   def create
     begin
       ScrapingService.parse(params[:url])
-      response, status  = 'success', :ok
-    rescue Addressable::URI::InvalidURIError => e
-      response, status = 'error', :bad_request
+      reply = {
+        status: 'success'
+      }
+      status = :ok
+    rescue => e
+      reply = {
+        status: 'error',
+        message: e.message
+      }
+      status = :bad_request
     end
-    render json: {status: response}, status: status
+    render json: reply, status: status
   end
 
   def show
